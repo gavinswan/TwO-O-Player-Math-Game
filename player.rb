@@ -1,11 +1,10 @@
 #Initialize Player class
 class Player
+  attr_accessor :name, :lives
   def initialize(name)
     @name = name
-  end
-  def lives
     @lives = 3
   end
 end
 
-player_one = Player.new("player_one")
+# player_one = Player.new("player_one")
