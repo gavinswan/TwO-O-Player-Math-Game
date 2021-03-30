@@ -16,6 +16,11 @@ class Game
     puts "#{@current_player.name}: #{@question.show}"
   end
 
+  # allow player to type in answer
+  def player_guess
+    print "> "
+    @guess = $stdin.gets.chomp
+  end
 end
 
 gameOne = Game.new
