@@ -6,6 +6,5 @@ class Question
   end
   def show
     puts "What is #{@num1} plus #{@num2}?"
-    print "> "
   end
 end
