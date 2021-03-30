@@ -55,6 +55,16 @@ class Game
       puts "----- NEW TURN -----"
     end
   end
+  
+  # game starts
+  def start
+    while self.current_player.lives > 0 do
+      self.ask_question
+      self.player_guess
+      self.check_answer
+      self.switch_players
+    end
+  end
 
 end
 
