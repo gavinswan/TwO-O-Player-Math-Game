@@ -9,6 +9,13 @@ class Game
     @current_player = @player1
     @other_player = @player2
   end
+  
+  # show current player's name in front of the question asked
+  def ask_question
+    @question = Question.new
+    puts "#{@current_player.name}: #{@question.show}"
+  end
+
 end
 
 gameOne = Game.new
