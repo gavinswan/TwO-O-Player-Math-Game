@@ -33,6 +33,29 @@ class Game
     end
     return
   end
+
+  # check for correct answer, print new scores and exit game if necessary
+  def check_answer
+    if guess.to_i != question.num1 + question.num2
+      puts "#{@current_player.name}: NO! That is the wrong answer"
+      @current_player.lives -= 1
+      if @current_player.lives == 0
+        
+        puts "#{@other_player.name} wins with a score of #{@other_player.lives}/3!"
+        puts "----- GAME OVER -----"
+        puts "Good bye!"
+        exit(0)
+      else
+        puts "P1: #{player1.lives}/3 vs P2: #{player2.lives}/3"
+        puts "----- NEW TURN -----"
+      end
+    else
+      puts "#{@current_player.name}: YES! You are correct"
+      puts "P1: #{player1.lives}/3 vs P2: #{player2.lives}/3"
+      puts "----- NEW TURN -----"
+    end
+  end
+
 end
 
 gameOne = Game.new
